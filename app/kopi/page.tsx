@@ -1,0 +1,4 @@
+import Link from "next/link";
+import ServiceCard from "@/components/ServiceCard";
+import {coffees} from "@/data/coffees";
+export default function CoffeePage(){return <><section className="page-hero"><div className="container"><div className="breadcrumbs"><Link href="/">Beranda</Link> / Koleksi Kopi</div><span className="eyebrow">KATALOG NUSANTARA</span><h1>Temukan rasa favoritmu.</h1><p>Setiap biji membawa karakter daerah asalnya. Jelajahi koleksi kopi pilihan kami dan temukan cerita yang paling cocok untuk cangkirmu.</p></div></section><section className="section container"><div className="section-heading"><div><span className="eyebrow">KOPI PILIHAN</span><h2>Dari berbagai penjuru Indonesia</h2></div><span className="text-link">{coffees.length} pilihan kopi</span></div><div className="card-grid">{coffees.map(coffee=><ServiceCard key={coffee.slug} item={coffee}/>)}</div></section></>}
